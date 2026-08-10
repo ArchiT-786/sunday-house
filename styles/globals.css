@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+:root {
+
+--background: 42 33% 96%;
+--foreground: 150 18% 16%;
+
+--card: 0 0% 100%;
+--card-foreground: 150 18% 16%;
+
+--popover: 0 0% 100%;
+--popover-foreground: 150 18% 16%;
+
+/* Forest green — primary brand */
+--primary: 151 34% 24%;
+--primary-foreground: 42 33% 97%;
+
+/* Soft sage — secondary */
+--secondary: 88 18% 88%;
+--secondary-foreground: 151 34% 22%;
+
+/* Muted warm surface */
+--muted: 40 24% 91%;
+--muted-foreground: 150 8% 43%;
+
+/* Warm terracotta accent */
+--accent: 17 42% 55%;
+--accent-foreground: 0 0% 100%;
+
+/* Destructive */
+--destructive: 0 62% 48%;
+--destructive-foreground: 0 0% 100%;
+
+/* Borders & inputs */
+--border: 38 20% 84%;
+--input: 38 20% 84%;
+
+/* Focus ring */
+--ring: 151 34% 24%;
+
+/* Softer hospitality-style corners */
+--radius: 0.75rem;
+
+/* Charts */
+--chart-1: 151 34% 24%;
+--chart-2: 17 42% 55%;
+--chart-3: 88 18% 55%;
+--chart-4: 39 55% 62%;
+--chart-5: 150 18% 42%;
+
+}
+
+.dark {
+
+--background: 150 20% 9%;
+--foreground: 42 25% 94%;
+
+--card: 150 18% 12%;
+--card-foreground: 42 25% 94%;
+
+--popover: 150 18% 12%;
+--popover-foreground: 42 25% 94%;
+
+--primary: 88 24% 72%;
+--primary-foreground: 150 25% 10%;
+
+--secondary: 150 15% 18%;
+--secondary-foreground: 42 25% 94%;
+
+--muted: 150 15% 17%;
+--muted-foreground: 42 10% 68%;
+
+--accent: 17 42% 58%;
+--accent-foreground: 0 0% 100%;
+
+--destructive: 0 55% 42%;
+--destructive-foreground: 0 0% 98%;
+
+--border: 150 12% 23%;
+--input: 150 12% 23%;
+
+--ring: 88 24% 72%;
+
+--chart-1: 88 24% 72%;
+--chart-2: 17 42% 58%;
+--chart-3: 151 28% 48%;
+--chart-4: 39 55% 62%;
+--chart-5: 42 25% 70%;
+
+}
+}
+
+@layer base {
+
+* {
+  @apply border-border;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+@apply bg-background text-foreground;
+font-feature-settings: "rlig" 1, "calt" 1;
+text-rendering: optimizeLegibility;
+}
+
+::selection {
+background-color: hsl(var(--primary));
+color: hsl(var(--primary-foreground));
+}
+}
+
+@layer components {
+/* ─────────────────────────────────────────
+HOMESTAY SURFACES
+───────────────────────────────────────── */
+
+.homestay-section {
+@apply py-16 md:py-20 lg:py-24;
+}
+
+.homestay-container {
+@apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+}
+
+.homestay-card {
+@apply overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300;
+}
+
+.homestay-card:hover {
+@apply shadow-lg;
+transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────
+IMAGE TREATMENT
+───────────────────────────────────────── */
+
+.homestay-image {
+@apply overflow-hidden rounded-2xl;
+}
+
+.homestay-image img {
+@apply transition-transform duration-700 ease-out;
+}
+
+.homestay-image:hover img {
+transform: scale(1.04);
+}
+
+/* ─────────────────────────────────────────
+BUTTONS
+───────────────────────────────────────── */
+
+.homestay-primary-button {
+@apply inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-medium text-primary-foreground shadow-sm transition-all duration-300;
+}
+
+.homestay-primary-button:hover {
+@apply shadow-md;
+transform: translateY(-1px);
+}
+
+.homestay-secondary-button {
+@apply inline-flex items-center justify-center rounded-full border border-primary/20 bg-white px-6 py-3 font-medium text-primary transition-all duration-300;
+}
+
+.homestay-secondary-button:hover {
+@apply border-primary/40 bg-secondary;
+}
+
+/* ─────────────────────────────────────────
+BADGES
+───────────────────────────────────────── */
+
+.homestay-badge {
+@apply inline-flex items-center rounded-full border border-primary/10 bg-secondary px-3 py-1 text-xs font-medium tracking-wide text-primary;
+}
+
+.homestay-badge-accent {
+@apply inline-flex items-center rounded-full bg-accent px-3 py-1 text-xs font-medium tracking-wide text-white;
+}
+
+/* ─────────────────────────────────────────
+FORM ELEMENTS
+───────────────────────────────────────── */
+
+.homestay-input {
+@apply h-12 rounded-xl border bg-white px-4 text-sm outline-none transition-all duration-200;
+}
+
+.homestay-input:focus {
+@apply border-primary ring-2 ring-primary/10;
+}
+
+/* ─────────────────────────────────────────
+SECTION HEADINGS
+───────────────────────────────────────── */
+
+.homestay-eyebrow {
+@apply mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent;
+}
+
+.homestay-heading {
+@apply text-3xl font-semibold tracking-tight text-primary md:text-4xl lg:text-5xl;
+}
+
+.homestay-description {
+@apply mt-4 max-w-2xl text-base leading-7 text-muted-foreground md:text-lg;
+}
+}
+
+@layer utilities {
+/* ─────────────────────────────────────────
+DOCUMENTATION / STEPS
+───────────────────────────────────────── */
+
+.step {
+counter-increment: step;
+}
+
+.step:before {
+@apply absolute inline-flex h-9 w-9 items-center justify-center rounded-full border-4 border-background bg-muted text-center font-mono text-base font-medium;
+@apply ml-[-50px] mt-[-4px];
+content: counter(step);
+}
+
+/* ─────────────────────────────────────────
+HOMESTAY TEXT GRADIENT
+Forest → Terracotta
+───────────────────────────────────────── */
+
+.text-gradient_indigo-purple {
+background: linear-gradient(
+90deg,
+hsl(151 34% 24%) 0%,
+hsl(17 42% 55%) 100%
+);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+.text-gradient-homestay {
+background: linear-gradient(
+90deg,
+hsl(151 34% 24%) 0%,
+hsl(17 42% 55%) 100%
+);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+/* ─────────────────────────────────────────
+SUBTLE HOVER EFFECTS
+───────────────────────────────────────── */
+
+.hover-lift {
+transition:
+transform 300ms ease,
+box-shadow 300ms ease;
+}
+
+.hover-lift:hover {
+transform: translateY(-3px);
+box-shadow:
+0 12px 30px rgb(35 72 58 / 0.08),
+0 4px 10px rgb(35 72 58 / 0.05);
+}
+
+/* ─────────────────────────────────────────
+BACKGROUND PATTERNS
+───────────────────────────────────────── */
+
+.bg-homestay-gradient {
+background:
+radial-gradient(
+circle at 10% 20%,
+rgb(113 138 114 / 0.12),
+transparent 30%
+),
+radial-gradient(
+circle at 90% 80%,
+rgb(184 111 82 / 0.10),
+transparent 30%
+),
+hsl(var(--background));
+}
+
+.bg-forest-gradient {
+background:
+linear-gradient(
+135deg,
+hsl(151 34% 24%) 0%,
+hsl(150 28% 18%) 100%
+);
+}
+
+.bg-sage-gradient {
+background:
+linear-gradient(
+135deg,
+hsl(88 18% 88%) 0%,
+hsl(42 33% 96%) 100%
+);
+}
+}
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
