@@ -6,41 +6,41 @@ import { Icons } from "@/components/shared/icons";
 
 const places = [
   {
-    title: "Nokdara Lake",
-    eyebrow: "The heart of Nokdara",
+    title: "Rishop Hills",
+    eyebrow: "Mountain views",
     description:
-      "Spend some time around Nokdara Lake, a peaceful highland lake surrounded by green hills, landscaped gardens, and quiet mountain scenery.",
-    image: "/images/nokdara/lake.webp",
-    alt: "Nokdara Lake surrounded by green hills in Kalimpong, West Bengal",
+      "Take in the quiet landscape around Rishop, with forested slopes, open skies, and beautiful mountain views.",
+    image: "/images/rishop/hills.webp",
+    alt: "Mountain landscape around Rishop, West Bengal",
   },
   {
-    title: "Forest & Village Walks",
+    title: "Forest Walks",
     eyebrow: "Slow exploration",
     description:
-      "Wander through the surrounding village and forested landscape, taking in the quiet roads, mountain air, and everyday life of rural Kalimpong.",
-    image: "/images/nokdara/forest.webp",
-    alt: "Forested landscape and village surroundings in Nokdara, Kalimpong",
+      "Follow the quieter paths through the surrounding forests and enjoy the fresh mountain air at your own pace.",
+    image: "/images/rishop/forest.webp",
+    alt: "Forest path near Rishop, West Bengal",
   },
   {
-    title: "Mountain Views",
+    title: "Nearby Viewpoints",
     eyebrow: "Look a little further",
     description:
-      "On clear days, the surrounding hills open up to beautiful mountain views, including distant views towards Kanchenjunga.",
-    image: "/images/nokdara/viewpoint.webp",
-    alt: "Mountain views from Nokdara in Kalimpong, West Bengal",
+      "Explore viewpoints around the hills and discover the changing colours and moods of the Eastern Himalayas.",
+    image: "/images/rishop/viewpoint.webp",
+    alt: "Mountain viewpoint near Rishop",
   },
 ];
 
 const thingsToDo = [
-  "Spend a quiet morning around Nokdara Lake",
-  "Take a slow walk through the surrounding village",
-  "Explore the forested hills and quieter roads",
-  "Enjoy boating at Nokdara Lake when available",
-  "Look out for Himalayan birds and changing mountain views",
+  "Take a quiet morning walk",
+  "Explore the surrounding forests",
+  "Visit nearby viewpoints",
+  "Spend an afternoon enjoying the mountain air",
+  "Discover local food and village life",
   "Return to Sunday House for a slow evening",
 ];
 
-export default function NokdaraPage() {
+export default function RishopPage() {
   return (
     <main>
       {/* Hero */}
@@ -52,8 +52,8 @@ export default function NokdaraPage() {
 
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-muted shadow-xl">
                 <Image
-                  src="/images/nokdara/hero.webp"
-                  alt="Nokdara landscape in Kalimpong, West Bengal"
+                  src="/images/rishop/hero.webp"
+                  alt="Rishop mountain landscape in West Bengal"
                   fill
                   priority
                   className="object-cover"
@@ -64,7 +64,7 @@ export default function NokdaraPage() {
 
                 <div className="absolute bottom-5 left-5">
                   <div className="rounded-full border border-white/20 bg-black/20 px-4 py-2 text-xs text-white backdrop-blur-md">
-                    Nokdara · Kalimpong
+                    Rishop · West Bengal
                   </div>
                 </div>
               </div>
@@ -73,24 +73,24 @@ export default function NokdaraPage() {
             <div className="order-1 max-w-xl lg:order-2">
               <div className="homestay-eyebrow flex items-center gap-3">
                 <span className="h-px w-10 bg-accent" />
-                <span>Explore Nokdara</span>
+                <span>Explore Rishop</span>
               </div>
 
               <h1 className="font-heading text-4xl font-medium leading-[1.05] tracking-tight text-primary sm:text-5xl md:text-6xl">
                 Let the mountains
-                <span className="font-serif italic"> slow you down.</span>
+                <span className="font-serif italic"> set the pace.</span>
               </h1>
 
               <p className="mt-7 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-                Nokdara is a quiet rural destination in the hills of
-                Kalimpong, known for its lake, forested surroundings, village
-                landscapes, and expansive mountain views.
+                Rishop is a quiet hill destination in West Bengal, surrounded
+                by forests, mountain air, and peaceful trails. Stay at Sunday
+                House and take your time discovering the area.
               </p>
 
               <p className="mt-5 text-base leading-7 text-muted-foreground">
-                Spend an unhurried day by the lake, walk through the
-                surrounding hills, look out towards the mountains, and enjoy
-                the slower rhythm of village life.
+                There is no need to rush. Walk, explore, stop for tea, enjoy
+                the views, and let a few quiet days become part of your
+                journey.
               </p>
 
               <Link
@@ -112,15 +112,15 @@ export default function NokdaraPage() {
       >
         <MaxWidthWrapper>
           <div className="max-w-2xl">
-            <p className="homestay-eyebrow">Around Nokdara</p>
+            <p className="homestay-eyebrow">Around the village</p>
 
             <h2 className="homestay-heading">
               Explore slowly.
             </h2>
 
             <p className="homestay-description">
-              Nokdara is best experienced at an easy pace — by the lake,
-              through the village, and among the surrounding hills.
+              The best way to experience Rishop is without trying to see
+              everything at once.
             </p>
           </div>
 
@@ -171,9 +171,8 @@ export default function NokdaraPage() {
               </h2>
 
               <p className="homestay-description">
-                Nokdara invites you to slow down — spend time by the lake,
-                walk through the surrounding landscape, and enjoy the quieter
-                side of the Kalimpong hills.
+                Rishop is best enjoyed with enough time to stop, look around,
+                and simply enjoy where you are.
               </p>
             </div>
 
@@ -203,8 +202,8 @@ export default function NokdaraPage() {
           <div className="relative overflow-hidden rounded-[2rem]">
             <div className="relative aspect-[16/7] min-h-[360px]">
               <Image
-                src="/images/nokdara/evening.webp"
-                alt="Peaceful evening landscape in Nokdara, Kalimpong"
+                src="/images/rishop/evening.webp"
+                alt="Peaceful evening landscape in Rishop"
                 fill
                 className="object-cover"
                 sizes="100vw"
