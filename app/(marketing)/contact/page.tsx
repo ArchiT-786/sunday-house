@@ -19,8 +19,9 @@ export default function ContactPage() {
             </h1>
 
             <p className="homestay-description mx-auto mt-6">
-              Have a question about Sunday House, Rishop, or planning your
-              visit? Get in touch with us and we'll be happy to help.
+              Have a question about Sunday House, Nokdara, or planning your
+              visit to the hills of Kalimpong? Get in touch with us and we'll
+              be happy to help.
             </p>
           </div>
         </MaxWidthWrapper>
@@ -37,12 +38,13 @@ export default function ContactPage() {
               </p>
 
               <h2 className="mt-4 font-heading text-3xl font-medium tracking-tight">
-                A little mountain home in Rishop.
+                A little mountain home in Nokdara.
               </h2>
 
               <p className="mt-5 text-sm leading-6 text-primary-foreground/70">
                 Reach out to us for availability, room information, directions,
-                or anything else you'd like to know before your visit.
+                or anything else you'd like to know before your visit to
+                Nokdara.
               </p>
 
               <div className="mt-8 space-y-5">
@@ -57,7 +59,7 @@ export default function ContactPage() {
                     </p>
 
                     <p className="mt-1 text-sm">
-                      Rishop, West Bengal
+                      Nokdara, Kalimpong, West Bengal
                     </p>
                   </div>
                 </div>
@@ -81,7 +83,7 @@ export default function ContactPage() {
 
               <div className="mt-10 border-t border-white/10 pt-6">
                 <p className="text-sm leading-6 text-primary-foreground/60">
-                  We look forward to welcoming you to the hills.
+                  We look forward to welcoming you to the hills of Kalimpong.
                 </p>
               </div>
             </div>
@@ -98,8 +100,8 @@ export default function ContactPage() {
                 </h2>
 
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  This form is currently a simple enquiry form. We can connect
-                  it to email or WhatsApp once your contact details are ready.
+                  Tell us when you're planning to visit, how many guests are
+                  travelling, and anything else you'd like us to know.
                 </p>
               </div>
 
