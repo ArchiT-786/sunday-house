@@ -75,7 +75,7 @@ export default function ComingSoonPage() {
         <div className="flex items-center gap-3">
           <div className="relative w-16 h-16 sm:w-20 sm:h-20 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
             <Image
-              src="/_static/sunday_house.png"
+              src="/_static/sunday_houses.png"
               alt="Sunday Houses Logo"
               fill
               className="object-contain"
