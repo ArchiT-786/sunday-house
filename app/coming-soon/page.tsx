@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { Mail, CheckCircle2, Sparkles, MapPin } from "lucide-react";
 
 interface TimeLeft {
@@ -57,7 +58,7 @@ export default function ComingSoonPage() {
   return (
     <div className="relative h-screen w-full max-h-screen flex flex-col justify-between bg-[#0B1015] text-slate-100 overflow-hidden font-sans select-none">
       
-      {/* Google Fonts Preload Injection for Fancy Serif Countdown */}
+      {/* Fancy Serif Fonts Preload Injection */}
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
         
@@ -83,55 +84,28 @@ export default function ComingSoonPage() {
         <div className="absolute -right-1/4 top-1/2 w-[150%] h-80 bg-gradient-to-r from-transparent via-slate-100/10 to-transparent blur-3xl animate-[pulse_12s_ease-in-out_infinite_2s]" />
       </div>
 
-      {/* Dark Vignette & Gold Radial Glow */}
+      {/* Dark Vignette & Gold Glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0B1015]/90 via-[#0B1015]/70 to-[#0B1015]/95 pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Header Bar */}
       <header className="relative z-10 w-full max-w-6xl mx-auto px-6 py-4 sm:py-6 flex items-center justify-between shrink-0">
         
-        {/* Inline SVG Logo Badge - Guaranteed to render without external image dependencies */}
+        {/* Prominent Large Logo Image */}
         <div className="flex items-center gap-3">
-          <div className="w-14 h-14 sm:w-16 sm:h-16 relative flex items-center justify-center drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
-            <svg viewBox="0 0 200 200" className="w-full h-full">
-              <defs>
-                <linearGradient id="goldRing" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#fef08a" />
-                  <stop offset="50%" stopColor="#d97706" />
-                  <stop offset="100%" stopColor="#78350f" />
-                </linearGradient>
-                <clipPath id="archClip">
-                  <path d="M 30,120 A 70,70 0 0,1 170,120 L 170,130 L 30,130 Z" />
-                </clipPath>
-              </defs>
-
-              {/* Decorative Outer Pattern Ring */}
-              <circle cx="100" cy="100" r="92" fill="#131c24" stroke="url(#goldRing)" strokeWidth="4" />
-              <circle cx="100" cy="100" r="84" fill="none" stroke="#d97706" strokeWidth="1" strokeDasharray="3,3" />
-
-              {/* Mountains & Sun Landscape */}
-              <circle cx="100" cy="100" r="76" fill="#1e293b" />
-              <circle cx="135" cy="75" r="14" fill="#f97316" opacity="0.9" />
-              <polygon points="40,115 85,55 120,115" fill="#334155" />
-              <polygon points="70,55 85,35 100,55" fill="#f8fafc" opacity="0.9" />
-              <polygon points="80,115 125,65 160,115" fill="#475569" />
-              <polygon points="113,65 125,48 137,65" fill="#f8fafc" opacity="0.9" />
-              
-              {/* Wooden House Icon */}
-              <polygon points="90,112 110,95 130,112" fill="#78350f" />
-              <rect x="94" y="112" width="32" height="18" fill="#92400e" />
-              <rect x="106" y="118" width="8" height="12" fill="#451a03" />
-
-              {/* Banner with Text */}
-              <path d="M 20,125 Q 100,105 180,125 L 170,170 Q 100,150 30,170 Z" fill="#0f172a" stroke="url(#goldRing)" strokeWidth="2" />
-              <text x="100" y="142" textAnchor="middle" fill="#fef08a" fontSize="13" fontFamily="serif" fontWeight="bold" letterSpacing="1">SUNDAY HOUSES</text>
-              <text x="100" y="158" textAnchor="middle" fill="#f59e0b" fontSize="7" fontFamily="sans-serif" letterSpacing="0.5">HOMESTAY & TOURIST SERVICES</text>
-            </svg>
+          <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)] transition-transform hover:scale-105">
+            <Image
+              src="/_static/sunday_houses.png"
+              alt="Sunday Houses Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
         </div>
 
         {/* Launching Soon Pill */}
-        <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider text-amber-200/90 bg-slate-900/80 border border-amber-500/30 backdrop-blur-md shadow-md">
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wider text-amber-200/90 bg-slate-900/80 border border-amber-500/30 backdrop-blur-md shadow-md">
           <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" /> LAUNCHING SOON
         </span>
       </header>
@@ -162,7 +136,7 @@ export default function ComingSoonPage() {
           </span>.
         </p>
 
-        {/* Luxury Fancy Countdown Box */}
+        {/* Fancy Countdown Box */}
         <div className="w-full max-w-md mb-6 sm:mb-8 p-0.5 rounded-2xl bg-gradient-to-r from-amber-500/40 via-amber-200/30 to-amber-500/40 shadow-[0_0_50px_rgba(217,119,6,0.2)]">
           <div className="grid grid-cols-4 gap-2 p-3 sm:p-5 rounded-[15px] bg-[#070b0e]/90 backdrop-blur-xl border border-amber-500/20">
             {[
@@ -172,7 +146,6 @@ export default function ComingSoonPage() {
               { label: "SECONDS", value: timeLeft.seconds },
             ].map((item, index) => (
               <div key={index} className="flex flex-col items-center justify-center">
-                {/* Fancy Typography for Numbers */}
                 <span className="text-2xl sm:text-4xl font-cinzel font-bold text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-amber-500 drop-shadow-sm">
                   {String(item.value).padStart(2, "0")}
                 </span>
