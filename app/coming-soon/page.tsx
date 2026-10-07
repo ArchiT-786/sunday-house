@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Home, Mail, Sparkles, MapPin, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
+import { Mail, CheckCircle2, MapPin, Sparkles } from "lucide-react";
 
 interface TimeLeft {
   days: number;
@@ -55,45 +56,44 @@ export default function ComingSoonPage() {
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col justify-between bg-[#1c1815] text-[#f4efe8] overflow-hidden font-sans">
-      {/* Soft Ambient Background Glows */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#c88a4b]/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-[500px] h-[500px] bg-[#9a5d2e]/10 rounded-full blur-[120px] pointer-events-none" />
+    <div className="relative min-h-screen w-full flex flex-col justify-between bg-[#1C3D2B] text-[#F7F7F5] overflow-hidden font-sans">
+      {/* Soft Subtle Glow Effect */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#2E5A44]/30 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Navigation / Brand Header */}
+      {/* Header with Logo */}
       <header className="relative z-10 w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-2xl bg-[#c88a4b]/15 border border-[#c88a4b]/30 text-[#e6a86c]">
-            <Home className="w-6 h-6" />
-          </div>
-          <span className="text-2xl font-serif font-bold tracking-tight bg-gradient-to-r from-[#f4efe8] via-[#e6a86c] to-[#c88a4b] bg-clip-text text-transparent">
-            Sunday Houses
-          </span>
+          <Image
+            src="/_static/sunday_house.png"
+            alt="Sunday Houses Logo"
+            width={140}
+            height={40}
+            className="h-9 w-auto object-contain brightness-0 invert"
+            priority
+          />
         </div>
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#2a231d] border border-[#3e342b] text-[#e6a86c]">
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#2E5A44]/40 border border-[#3E6C54] text-[#E0E7E3]">
           <Sparkles className="w-3.5 h-3.5" /> Launching Soon
         </span>
       </header>
 
-      {/* Main Content Hero */}
+      {/* Main Content */}
       <main className="relative z-10 w-full max-w-4xl mx-auto px-6 py-10 text-center my-auto flex flex-col items-center">
-        {/* Subtitle Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2a231d]/90 border border-[#3e342b] text-[#d6c7b2] text-sm mb-8 backdrop-blur-md">
-          <MapPin className="w-4 h-4 text-[#e6a86c]" />
-          <span>Curated Homestays & Peaceful Escapes</span>
+        {/* Tag Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2E5A44]/30 border border-[#3E6C54] text-[#D0DAD4] text-xs uppercase tracking-widest mb-8 backdrop-blur-md">
+          <MapPin className="w-4 h-4 text-[#A8C3B5]" />
+          <span>Curated Homestays & Escapes</span>
         </div>
 
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight text-white mb-6 leading-tight">
-          Every day feels like a Sunday. <br />
-          <span className="bg-gradient-to-r from-[#e6a86c] via-[#f0c396] to-[#c88a4b] bg-clip-text text-transparent">
-            Your getaway is almost ready.
-          </span>
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif tracking-tight text-[#F7F7F5] mb-6 leading-tight">
+          Wake up <br />
+          <span className="italic font-normal text-[#C5D8CD]">above the clouds.</span>
         </h1>
 
-        <p className="text-base sm:text-lg text-[#b8a795] max-w-2xl mb-10 leading-relaxed">
-          We are handpicking unique homestays and cozy sanctuaries for your next trip. 
-          Our platform will be live on <span className="text-[#f4efe8] font-medium">October 11 at 11:59 PM</span>.
+        <p className="text-base sm:text-lg text-[#B2C5BB] max-w-xl mb-10 leading-relaxed">
+          We’re crafting peaceful escapes and handpicked homestays away from the ordinary. 
+          Our platform will be live on <span className="text-[#F7F7F5] font-semibold">October 11 at 11:59 PM</span>.
         </p>
 
         {/* Live Countdown Grid */}
@@ -106,43 +106,43 @@ export default function ComingSoonPage() {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center p-3 sm:p-5 rounded-2xl bg-[#2a231d]/80 border border-[#3e342b] backdrop-blur-md shadow-xl"
+              className="flex flex-col items-center justify-center p-3 sm:p-5 rounded-2xl bg-[#142E20]/80 border border-[#2E5A44] backdrop-blur-md shadow-xl"
             >
-              <span className="text-2xl sm:text-4xl font-serif font-bold text-[#e6a86c]">
+              <span className="text-2xl sm:text-4xl font-serif font-bold text-[#F7F7F5]">
                 {String(item.value).padStart(2, "0")}
               </span>
-              <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-[#a3917c] mt-1">
+              <span className="text-[10px] sm:text-xs font-medium tracking-widest text-[#8AA898] mt-1">
                 {item.label}
               </span>
             </div>
           ))}
         </div>
 
-        {/* Early Access Email Subscription */}
+        {/* Subscription Form */}
         <div className="w-full max-w-md">
           {submitted ? (
-            <div className="flex items-center justify-center gap-2 p-4 rounded-2xl bg-[#2a231d] border border-[#c88a4b]/40 text-[#e6a86c] font-medium text-sm animate-fade-in">
-              <CheckCircle2 className="w-5 h-5" /> You’re on the list! We’ll notify you at launch.
+            <div className="flex items-center justify-center gap-2 p-4 rounded-2xl bg-[#142E20] border border-[#2E5A44] text-[#C5D8CD] font-medium text-sm">
+              <CheckCircle2 className="w-5 h-5 text-[#8AA898]" /> You’re on the list! We’ll notify you when we open our doors.
             </div>
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row items-center gap-2 bg-[#2a231d]/90 border border-[#3e342b] rounded-2xl p-2 shadow-2xl backdrop-blur-xl"
+              className="flex flex-col sm:flex-row items-center gap-2 bg-[#142E20]/90 border border-[#2E5A44] rounded-2xl p-2 shadow-2xl backdrop-blur-xl"
             >
               <div className="relative w-full">
-                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#a3917c]" />
+                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8AA898]" />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address..."
                   required
-                  className="w-full pl-10 pr-4 py-3 bg-[#1c1815]/80 border border-[#3e342b] rounded-xl text-sm text-[#f4efe8] placeholder:text-[#807060] focus:outline-none focus:ring-2 focus:ring-[#c88a4b]/50 transition-all"
+                  className="w-full pl-10 pr-4 py-3 bg-[#1C3D2B]/80 border border-[#2E5A44] rounded-xl text-sm text-[#F7F7F5] placeholder:text-[#6E8A7B] focus:outline-none focus:ring-2 focus:ring-[#8AA898]/50 transition-all"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#c88a4b] hover:bg-[#d89754] text-[#1c1815] font-semibold text-sm transition-all shadow-lg shadow-[#c88a4b]/20 whitespace-nowrap"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#F7F7F5] hover:bg-[#E0E0DC] text-[#1C3D2B] font-semibold text-sm transition-all shadow-lg whitespace-nowrap"
               >
                 Notify Me
               </button>
@@ -152,7 +152,7 @@ export default function ComingSoonPage() {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 w-full max-w-6xl mx-auto px-6 py-6 text-center text-xs text-[#807060] border-t border-[#2a231d]">
+      <footer className="relative z-10 w-full max-w-6xl mx-auto px-6 py-6 text-center text-xs text-[#8AA898] border-t border-[#2E5A44]/40">
         <p>© {new Date().getFullYear()} Sunday Houses (sundayhouses.com). All rights reserved.</p>
       </footer>
     </div>
