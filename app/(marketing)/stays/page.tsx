@@ -8,16 +8,16 @@ const rooms = [
   {
     name: "Mountain View Room",
     description:
-      "A comfortable room for slow mornings, fresh mountain air, and peaceful evenings surrounded by the quiet landscape of Nokdara.",
+      "A comfortable room for slow mornings, mountain air, and peaceful evenings at Sunday House.",
     image: "/images/stays/mountain-view-room.webp",
-    alt: "Mountain view room at Sunday House in Nokdara, Kalimpong",
+    alt: "Mountain view room at Sunday House in Rishop",
   },
   {
     name: "The Cosy Room",
     description:
-      "A warm and simple space to rest after a day by Nokdara Lake or exploring the surrounding village and forested hills.",
+      "A warm and simple space to rest after a day of exploring the hills around Rishop.",
     image: "/images/stays/cosy-room.webp",
-    alt: "Cosy room at Sunday House homestay in Nokdara, Kalimpong",
+    alt: "Cosy room at Sunday House homestay in Rishop",
   },
 ];
 
@@ -26,19 +26,19 @@ const comforts = [
     icon: Icons.home,
     title: "A homely stay",
     description:
-      "A relaxed mountain home designed for comfort, warmth, and unhurried days in the hills.",
+      "A relaxed mountain home designed for comfort rather than formality.",
   },
   {
     icon: Icons.search,
     title: "Close to nature",
     description:
-      "Wake up to fresh mountain air, quiet surroundings, and the forested landscape of Nokdara.",
+      "Wake up to fresh mountain air, quiet surroundings, and the landscape of Rishop.",
   },
   {
     icon: Icons.messages,
     title: "Warm hospitality",
     description:
-      "We're here when you need us, while giving you the space to enjoy the slower rhythm of your stay.",
+      "We're here when you need us, while giving you the space to enjoy your stay.",
   },
 ];
 
@@ -61,10 +61,9 @@ export default function StaysPage() {
               </h1>
 
               <p className="mt-7 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-                Settle into Sunday House in Nokdara, Kalimpong. Wake up to
-                fresh mountain air, spend your days exploring the lake,
-                forests, and surrounding hills, then return to a warm and
-                comfortable place to rest.
+                Settle into Sunday House in Rishop, West Bengal. Wake up to
+                mountain air, spend your days exploring the hills, and return
+                to a warm and comfortable place to rest.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -77,10 +76,10 @@ export default function StaysPage() {
                 </Link>
 
                 <Link
-                  href="/nokdara"
+                  href="/rishop"
                   className="homestay-secondary-button"
                 >
-                  Explore Nokdara
+                  Explore Rishop
                 </Link>
               </div>
             </div>
@@ -91,7 +90,7 @@ export default function StaysPage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-muted shadow-xl">
                 <Image
                   src="/images/stays/stay-hero.webp"
-                  alt="Sunday House homestay in Nokdara, Kalimpong"
+                  alt="Sunday House homestay in Rishop, West Bengal"
                   fill
                   priority
                   className="object-cover"
@@ -102,7 +101,7 @@ export default function StaysPage() {
 
                 <div className="absolute bottom-5 left-5">
                   <div className="rounded-full border border-white/20 bg-black/20 px-4 py-2 text-xs text-white backdrop-blur-md">
-                    Sunday House · Nokdara
+                    Sunday House · Rishop
                   </div>
                 </div>
               </div>
@@ -127,9 +126,8 @@ export default function StaysPage() {
             </h2>
 
             <p className="homestay-description">
-              Simple, comfortable spaces for a peaceful stay in the hills of
-              Nokdara. We believe a good homestay doesn't need to be
-              complicated.
+              Simple, comfortable spaces for a peaceful stay in the hills.
+              We believe a good homestay doesn't need to be complicated.
             </p>
           </div>
 
@@ -229,12 +227,12 @@ export default function StaysPage() {
               </p>
 
               <h2 className="mt-4 font-heading text-3xl font-medium tracking-tight sm:text-4xl">
-                Ready for a few slower days in Nokdara?
+                Ready for a few slower days in Rishop?
               </h2>
 
               <p className="mt-4 max-w-xl text-sm leading-6 text-primary-foreground/70 sm:text-base">
                 Get in touch with us to ask about availability, rooms, and
-                planning your stay at Sunday House in the hills of Kalimpong.
+                planning your stay at Sunday House.
               </p>
 
               <Link
