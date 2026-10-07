@@ -32,16 +32,17 @@ export default function OurStoryPage() {
               </h1>
 
               <p className="mt-7 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-                Sunday House is our little mountain home in Rishop,
-                West Bengal. We created it as a place where people can
-                slow down, enjoy the hills, and experience the warmth of
-                staying somewhere that feels personal.
+                Sunday House is our little mountain home in Nokdara,
+                Kalimpong. We created it as a place where people can
+                slow down, enjoy the quiet surroundings, and experience
+                the warmth of staying somewhere that feels personal.
               </p>
 
               <p className="mt-5 text-base leading-7 text-muted-foreground sm:leading-8">
-                Away from the rush of busy towns, Rishop gives us a
-                different rhythm — quiet mornings, forest paths, cool
-                mountain air and plenty of time to simply be.
+                Away from the rush of busy towns, Nokdara has a gentler
+                rhythm — quiet mornings, forested hills, fresh mountain
+                air, village roads, and the peaceful presence of
+                Nokdara Lake.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -60,7 +61,7 @@ export default function OurStoryPage() {
                 </Link>
 
                 <Link
-                  href="/rishop"
+                  href="/nokdara"
                   className={cn(
                     buttonVariants({
                       variant: "ghost",
@@ -70,7 +71,7 @@ export default function OurStoryPage() {
                     "px-6 text-primary",
                   )}
                 >
-                  Explore Rishop
+                  Explore Nokdara
                 </Link>
               </div>
             </div>
@@ -82,7 +83,7 @@ export default function OurStoryPage() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] shadow-xl">
                 <Image
                   src="/images/our-story.jpg"
-                  alt="Sunday House in Rishop, West Bengal"
+                  alt="Sunday House in Nokdara, Kalimpong"
                   fill
                   priority
                   className="object-cover"
@@ -93,7 +94,7 @@ export default function OurStoryPage() {
 
                 <div className="absolute bottom-5 left-5">
                   <div className="rounded-full border border-white/20 bg-black/20 px-4 py-2 text-xs text-white backdrop-blur-md">
-                    Sunday House · Rishop
+                    Sunday House · Nokdara
                   </div>
                 </div>
               </div>
@@ -118,7 +119,7 @@ export default function OurStoryPage() {
               We believe a stay in the mountains should be more than
               simply having a room for the night. It should give you
               the chance to experience the place, meet the people,
-              discover the surroundings and enjoy a slower pace.
+              discover the surroundings, and enjoy a slower pace.
             </p>
           </div>
 
@@ -126,13 +127,13 @@ export default function OurStoryPage() {
             <StoryCard
               icon={<Icons.home className="size-5" />}
               title="Feel at home"
-              description="A comfortable, welcoming space where you can settle in, put your feet up and take your time."
+              description="A comfortable, welcoming space where you can settle in, put your feet up, and take your time."
             />
 
             <StoryCard
               icon={<Icons.search className="size-5" />}
-              title="Experience Rishop"
-              description="Step outside and discover forests, mountain paths, viewpoints and the quiet character of the hills."
+              title="Experience Nokdara"
+              description="Step outside and discover the lake, forested hills, village surroundings, and quiet character of the area."
             />
 
             <StoryCard
@@ -144,15 +145,15 @@ export default function OurStoryPage() {
         </MaxWidthWrapper>
       </section>
 
-      {/* Rishop */}
+      {/* Nokdara */}
       <section className="homestay-section">
         <MaxWidthWrapper>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="relative order-2 lg:order-1">
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] shadow-xl">
                 <Image
-                  src="/images/rishop-surroundings.webp"
-                  alt="Landscape around Rishop, West Bengal"
+                  src="/images/nokdara-surroundings.webp"
+                  alt="Landscape around Nokdara in Kalimpong, West Bengal"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-[1.02]"
                   sizes="(max-width: 1024px) 100vw, 55vw"
@@ -166,31 +167,33 @@ export default function OurStoryPage() {
               </p>
 
               <h2 className="homestay-heading">
-                Rishop is part of the story.
+                Nokdara is part of the story.
               </h2>
 
               <p className="homestay-description">
-                Perched in the hills of West Bengal, Rishop is the kind
-                of place where the journey slows down naturally.
+                Set among the hills of Kalimpong, Nokdara is a quiet
+                place shaped by forests, village surroundings, mountain
+                air, and the presence of its lake.
               </p>
 
               <p className="mt-5 text-base leading-7 text-muted-foreground">
-                The forests, mountain views, winding roads and quiet
-                village surroundings are not just things to see during
-                your stay — they are part of everyday life here.
+                The landscape here encourages a different pace. There
+                is time to take a walk, spend a little while by the
+                lake, explore the surrounding hills, or simply sit and
+                enjoy the changing light around you.
               </p>
 
               <p className="mt-5 text-base leading-7 text-muted-foreground">
                 That is what we hope guests discover when they stay at
-                Sunday House: not just a destination, but a different
-                way of spending a few days.
+                Sunday House: not just a place to sleep, but a chance
+                to experience a quieter side of the Kalimpong hills.
               </p>
 
               <Link
-                href="/rishop"
+                href="/nokdara"
                 className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-primary"
               >
-                Discover Rishop
+                Discover Nokdara
                 <Icons.arrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
@@ -213,8 +216,8 @@ export default function OurStoryPage() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-primary-foreground/70 sm:text-base">
-              We would love to welcome you to Rishop and share our
-              little corner of the mountains with you.
+              We would love to welcome you to Nokdara and share our
+              little corner of the Kalimpong hills with you.
             </p>
 
             <Link
