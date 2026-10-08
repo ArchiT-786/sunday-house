@@ -12,7 +12,7 @@ export default function ReserveSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/reserve.webp"
-          alt="Sunday House surrounded by nature"
+          alt="Sunday Houses surrounded by nature"
           fill
           sizes="100vw"
           className="object-cover object-center"
@@ -37,7 +37,7 @@ export default function ReserveSection() {
             <span className="h-px w-8 bg-accent/70" />
 
             <span className="text-[9px] font-medium uppercase tracking-[0.3em] text-primary/60">
-              Sunday House · Rishop
+              Sunday Houses · Nokdara
             </span>
           </div>
 
@@ -99,7 +99,7 @@ export default function ReserveSection() {
             </p>
 
             <p className="mt-1 text-[10px] font-medium text-primary/55">
-              Rishop · Eastern Himalayas
+              Nokdara · Eastern Himalayas
             </p>
           </div>
 
