@@ -1,3 +1,4 @@
+import PropertyImage from "@/components/shared/property-image";
 import Image from "next/image";
 import Link from "next/link";
 const stays = [
@@ -14,7 +15,7 @@ export default function StaysPage() {
     <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-32 md:grid-cols-2 lg:px-10">
       {stays.map((stay,i)=><Link href={`/stays/${stay.slug}`} key={stay.slug} className={`group block ${i===1?"md:mt-24":""}`}>
         <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
-          <Image src={stay.image} fill sizes="(max-width:768px) 100vw, 50vw" alt={`Mountain imagery for ${stay.name}`} className="object-cover transition-transform duration-1000 group-hover:scale-110"/>
+          <PropertyImage slug={stay.slug as "whistling-house" | "chaaya-glades"} className="object-cover transition-transform duration-1000 group-hover:scale-110"/>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"/>
           <h2 className="absolute bottom-8 left-8 font-heading text-4xl text-white">{stay.name}</h2>
         </div>
