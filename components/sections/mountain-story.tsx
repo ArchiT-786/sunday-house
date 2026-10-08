@@ -71,10 +71,24 @@ export function MountainScene({ progress }: { progress: React.MutableRefObject<n
    const draw = () => {
     const p=progress.current;
     if(Math.abs(last-p)>0.0001){
-     const angle=-0.36+p*1.35;
-     const radius=430-p*150;
-     camera.position.set(Math.sin(angle)*radius,115+p*110,Math.cos(angle)*radius);
-     camera.lookAt(-55+p*45,110+p*20,-110);
+     // Seven deliberately bounded camera states: no uncontrolled orbital spin.
+     // All points remain outside the terrain and look toward the mountain massif.
+     const stops = [
+      { x: -120, y: 190, z: 460, tx: -70, ty: 105, tz: -110 },
+      { x: -50, y: 180, z: 425, tx: -65, ty: 110, tz: -125 },
+      { x:  35, y: 155, z: 390, tx: -45, ty: 100, tz: -140 },
+      { x: 100, y: 160, z: 370, tx: -35, ty: 105, tz: -145 },
+      { x: 150, y: 175, z: 410, tx: -35, ty: 115, tz: -145 },
+      { x:  50, y: 205, z: 455, tx: -55, ty: 115, tz: -130 },
+      { x: -95, y: 215, z: 470, tx: -65, ty: 115, tz: -110 },
+     ];
+     const segment=Math.min(stops.length-2,Math.floor(Math.max(0,Math.min(0.999999,p))*(stops.length-1)));
+     const local=Math.max(0,Math.min(1,p*(stops.length-1)-segment));
+     const t=local*local*(3-2*local);
+     const a=stops[segment],b=stops[segment+1];
+     const mix=(v:number,w:number)=>v+(w-v)*t;
+     camera.position.set(mix(a.x,b.x),mix(a.y,b.y),mix(a.z,b.z));
+     camera.lookAt(mix(a.tx,b.tx),mix(a.ty,b.ty),mix(a.tz,b.tz));
      renderer.render(scene,camera);
      last=p;
     }
