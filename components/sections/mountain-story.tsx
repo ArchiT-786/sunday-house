@@ -8,7 +8,7 @@ declare global {
  interface Window { THREE?: any; }
 }
 
-function MountainScene({ progress }: { progress: React.MutableRefObject<number> }) {
+export function MountainScene({ progress }: { progress: React.MutableRefObject<number> }) {
  const mount = useRef<HTMLDivElement>(null);
  const [ready, setReady] = useState(false);
  useEffect(() => {
