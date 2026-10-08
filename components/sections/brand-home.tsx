@@ -1,4 +1,5 @@
 "use client";
+import PropertyImage from "@/components/shared/property-image";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
@@ -41,8 +42,7 @@ export default function BrandHome(){
      {properties.map((item,i)=><Reveal key={item.slug} className={i===1?"md:mt-36":""}>
       <Link href={`/stays/${item.slug}`} className="group block">
        <div className="relative aspect-[3/4] overflow-hidden bg-[#2c4547]">
-        <Image src={item.image} fill sizes="(max-width:768px) 100vw, 50vw" alt={`Mountain setting currently representing ${item.name}`}
-         className="object-cover transition-transform duration-[1800ms] ease-out group-hover:scale-110"/>
+        <PropertyImage slug={item.slug as "whistling-house" | "chaaya-glades"} className="object-cover transition-transform duration-[1800ms] ease-out group-hover:scale-110"/>
         <div className="absolute inset-0 bg-gradient-to-t from-[#061c23]/65 via-transparent to-transparent"/>
         <span className="absolute left-7 top-7 text-xs uppercase tracking-[0.3em] text-white">{item.number} / Sunday Houses</span>
         <div className="absolute bottom-8 left-8 right-8"><p className="text-xs uppercase tracking-[0.22em] text-white/80">{item.label}</p>
