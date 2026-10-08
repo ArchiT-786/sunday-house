@@ -1,3 +1,4 @@
+import ThreePageHero from "@/components/shared/three-page-hero";
 import PropertyImage from "@/components/shared/property-image";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,11 +8,7 @@ const stays = [
 ];
 export default function StaysPage() {
   return <main className="bg-[#f8f7f1]">
-    <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-36">
-      <p className="text-xs uppercase tracking-[0.3em] text-accent">The Sunday Houses collection</p>
-      <h1 className="mt-6 max-w-5xl font-heading text-[clamp(3.2rem,7vw,7rem)] leading-[1.04] text-primary">Find your place<br/><span className="font-serif italic">in the hills.</span></h1>
-      <p className="mt-7 max-w-2xl text-lg leading-9 text-muted-foreground">Our first two mountain homes are in Nokdara, Kalimpong, near Gumbadhara Monastery. Discover the one that feels like you.</p>
-    </section>
+    <ThreePageHero eyebrow="The Sunday Houses collection" title="Find your place" accent="in the hills." description="Two individual mountain homes in Nokdara, Kalimpong, near Gumbadhara Monastery. Explore the collection and find your kind of quiet." />
     <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-32 md:grid-cols-2 lg:px-10">
       {stays.map((stay,i)=><Link href={`/stays/${stay.slug}`} key={stay.slug} className={`group block ${i===1?"md:mt-24":""}`}>
         <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
