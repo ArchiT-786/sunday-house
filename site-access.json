@@ -1,7 +1,9 @@
 {
   "maintenance": true,
   "restricted": true,
-  "allowedIps": [],
+  "allowedIps": [
+    "106.219.75.202"
+  ],
   "launchAt": null,
   "showCountdown": false
 }
