@@ -42,7 +42,7 @@ export default function HeroLanding() {
       <div className="absolute inset-0 overflow-hidden">
         <Image
           src="/images/hero.webp"
-          alt="Sunday House surrounded by the mountains of Rishop"
+          alt="Sunday Houses surrounded by the mountains of Nokdara"
           fill
           priority
           sizes="100vw"
@@ -71,7 +71,7 @@ export default function HeroLanding() {
           <span className="h-px w-7 bg-white/60" />
 
           <span className="text-[8px] font-medium uppercase tracking-[0.28em] text-white/65 sm:text-[9px]">
-            Rishop · West Bengal
+            Nokdara · West Bengal
           </span>
         </div>
       </div>
@@ -91,7 +91,7 @@ export default function HeroLanding() {
             {/* Eyebrow */}
             <div className="mb-5 flex items-center gap-3 sm:mb-6">
               <span className="text-[8px] font-medium uppercase tracking-[0.3em] text-white/55">
-                Sunday House
+                Sunday Houses
               </span>
 
               <span className="h-px w-10 bg-white/25" />
@@ -113,7 +113,7 @@ export default function HeroLanding() {
             {/* Supporting content */}
             <div className="mt-7 flex flex-col gap-7 sm:mt-8 lg:flex-row lg:items-end lg:justify-between">
               <p className="max-w-md text-[12px] leading-6 text-white/65 sm:text-sm">
-                A quiet hideaway in the hills of Rishop,
+                A quiet hideaway in the hills of Nokdara,
                 surrounded by pine forests, mountain air,
                 and the slower rhythm of life in the Himalayas.
               </p>
@@ -141,7 +141,7 @@ export default function HeroLanding() {
                     hover:bg-[#f4f0e7]
                   "
                 >
-                  <span>Stay at Sunday House</span>
+                  <span>Stay at Sunday Houses</span>
 
                   <span className="flex size-6 items-center justify-center rounded-full bg-primary text-white transition-transform duration-500 group-hover:translate-x-0.5">
                     <ArrowUpRight className="size-3" />
@@ -149,7 +149,7 @@ export default function HeroLanding() {
                 </Link>
 
                 <Link
-                  href="/rishop"
+                  href="/nokdara"
                   className="
                     inline-flex
                     h-11
@@ -172,7 +172,7 @@ export default function HeroLanding() {
                     hover:bg-white/10
                   "
                 >
-                  Explore Rishop
+                  Explore Nokdara
                   <ArrowDown className="size-3.5" />
                 </Link>
               </div>
@@ -197,7 +197,7 @@ export default function HeroLanding() {
             </div>
 
             <span className="text-[8px] uppercase tracking-[0.25em] text-white/40">
-              Est. Rishop
+              Est. Nokdara
             </span>
           </div>
         </div>
