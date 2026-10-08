@@ -1,3 +1,4 @@
+import ThreePageHero from "@/components/shared/three-page-hero";
 import Link from "next/link";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 import ContactEnquiryForm from "@/components/forms/contact-enquiry-form";
@@ -5,17 +6,7 @@ import ContactEnquiryForm from "@/components/forms/contact-enquiry-form";
 export default function ContactPage() {
   return (
     <main>
-      <section className="homestay-section">
-        <MaxWidthWrapper>
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="homestay-eyebrow">Plan your stay</p>
-            <h1 className="homestay-heading text-4xl sm:text-5xl md:text-6xl">Let's plan your escape.</h1>
-            <p className="homestay-description mx-auto mt-6">
-              Have a question about Sunday Houses, Whistling House, Chaaya Glades or exploring Nokdara? We'd love to help.
-            </p>
-          </div>
-        </MaxWidthWrapper>
-      </section>
+      <ThreePageHero eyebrow="Your next journey begins here" title="Let's plan" accent="your escape." description="Questions about Whistling House, Chaaya Glades or exploring Nokdara? Tell us about your trip." height="min-h-[65svh]" />
       <section className="pb-16 md:pb-24 lg:pb-28">
         <MaxWidthWrapper>
           <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-10">
