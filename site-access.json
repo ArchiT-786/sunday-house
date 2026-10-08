@@ -1,5 +1,5 @@
 {
   "maintenance": true,
-  "restricted": true,
+  "restricted": false,
   "allowedIps": []
 }
