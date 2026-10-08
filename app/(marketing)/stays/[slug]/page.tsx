@@ -1,3 +1,4 @@
+import ThreePageHero from "@/components/shared/three-page-hero";
 import PropertyImage from "@/components/shared/property-image";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,13 +28,7 @@ export default function PropertyPage({params}: {params:{slug:string}}) {
   const stay = properties[params.slug as Slug];
   if (!stay) notFound();
   return <main className="bg-[#f8f7f1]">
-    <section className="relative flex min-h-[75vh] items-end overflow-hidden bg-primary px-6 pb-20 text-white md:px-12">
-      <PropertyImage slug={params.slug as "whistling-house" | "chaaya-glades"} priority sizes="100vw" className="object-cover"/>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
-      <div className="relative mx-auto w-full max-w-7xl"><p className="text-xs uppercase tracking-[0.3em] text-amber-200">Sunday Houses · Nokdara</p>
-        <h1 className="mt-5 font-heading text-[clamp(3.5rem,9vw,8rem)] leading-none">{stay.name}</h1>
-        <p className="mt-5 text-lg text-white/80">{stay.eyebrow}</p></div>
-    </section>
+    <ThreePageHero eyebrow="Sunday Houses · Nokdara" title={stay.name} accent="Your mountain home." description={stay.description} />
     <section className="mx-auto grid max-w-7xl gap-12 px-6 py-28 md:grid-cols-2 lg:px-10">
       <div><p className="text-xs uppercase tracking-[0.3em] text-accent">Your home in the hills</p>
         <h2 className="mt-6 font-heading text-5xl leading-tight text-primary">A place to <span className="font-serif italic">simply be.</span></h2></div>
