@@ -131,8 +131,8 @@ export default function MountainStory() {
   {eyebrow:"07 / Your escape",title:"Your next story begins here.",accent:"Come stay with us.",description:"Ask about our homes, plan your journey and find your place in the hills.",href:"/contact",cta:"Plan your stay"}
  ];
  const ranges = [0,0.15,0.30,0.45,0.60,0.75,0.88,1];
- return <section ref={section} className="relative h-[700vh] bg-[#0c202b] text-white" aria-label="Seven chapter mountain journey">
-  <div className="sticky top-0 h-[100svh] min-h-[500px] overflow-hidden">
+ return <section ref={section} className="relative h-[520svh] bg-[#0c202b] text-white md:h-[620svh]" aria-label="Seven chapter mountain journey">
+  <div className="sticky top-0 h-[100svh] min-h-[360px] overflow-hidden">
    <MountainScene progress={progress}/>
    <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#071a22]/85 via-[#071a22]/25 to-transparent"/>
    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#071a22]/75 via-transparent to-[#071a22]/20"/>
@@ -149,12 +149,12 @@ export default function MountainStory() {
 function Chapter({chapter,index,progress,start,end}:{chapter:{eyebrow:string;title:string;accent:string;description:string;href:string;cta:string};index:number;progress:any;start:number;end:number}){
  const fade=useTransform(progress,index===0?[0,0.015,Math.max(0.03,end-0.035),end]:[Math.max(0,start-0.025),start+0.025,Math.max(start+0.03,end-0.045),Math.min(1,end+0.02)],index===0?[1,1,1,0]:[0,1,1,0]);
  const rise=useTransform(progress,[start,Math.min(1,end)],[28,-22]);
- return <motion.div style={{opacity:fade,y:rise}} className="pointer-events-none absolute inset-0 flex items-center px-6 md:px-16" aria-label={chapter.eyebrow}>
+ return <motion.div style={{opacity:fade,y:rise}} className="pointer-events-none absolute inset-0 flex items-center px-5 py-16 sm:px-8 md:px-16" aria-label={chapter.eyebrow}>
   <div className="pointer-events-auto mx-auto w-full max-w-7xl">
    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#f1d4ac]">{chapter.eyebrow} · Sunday Houses</p>
-   <h2 className="mt-7 max-w-5xl font-heading text-[clamp(3.1rem,7.8vw,8.4rem)] leading-[0.96] tracking-[-0.06em]">{chapter.title}<br/><span className="font-serif font-normal italic text-[#f1d4ac]">{chapter.accent}</span></h2>
-   <p className="mt-8 max-w-lg text-base leading-8 text-white/90">{chapter.description}</p>
-   <Link href={chapter.href} tabIndex={0} className="mt-8 inline-flex items-center rounded-full border border-[#f1d4ac] bg-[#f1d4ac] px-7 py-3.5 text-sm font-semibold text-[#17362e] transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">{chapter.cta} ↗</Link>
+   <h2 className="mt-7 max-w-5xl font-heading text-[clamp(2.4rem,6.8vw,7.4rem)] leading-[0.96] tracking-[-0.06em]">{chapter.title}<br/><span className="font-serif font-normal italic text-[#f1d4ac]">{chapter.accent}</span></h2>
+   <p className="mt-5 max-w-lg text-sm leading-6 text-white/90 sm:mt-8 sm:text-base sm:leading-8">{chapter.description}</p>
+   <Link href={chapter.href} tabIndex={0} className="mt-6 inline-flex items-center rounded-full border border-[#f1d4ac] bg-[#f1d4ac] px-7 py-3.5 text-sm font-semibold text-[#17362e] transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">{chapter.cta} ↗</Link>
   </div>
  </motion.div>;
 }
