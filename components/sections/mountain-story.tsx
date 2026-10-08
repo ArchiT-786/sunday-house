@@ -148,7 +148,7 @@ export default function MountainStory() {
 
 function Chapter({chapter,index,progress,start,end}:{chapter:{eyebrow:string;title:string;accent:string;description:string;href:string;cta:string};index:number;progress:any;start:number;end:number}){
  const fade=useTransform(progress,index===0?[0,0.015,Math.max(0.03,end-0.035),end]:[Math.max(0,start-0.025),start+0.025,Math.max(start+0.03,end-0.045),Math.min(1,end+0.02)],index===0?[1,1,1,0]:[0,1,1,0]);
- const rise=useTransform(progress,[start,Math.min(1,end)],[28,-22]);
+ const rise=useTransform(progress,[start,Math.min(1,end)],[18,-14]);
  return <motion.div style={{opacity:fade,y:rise}} className="pointer-events-none absolute inset-0 flex items-center px-5 py-16 sm:px-8 md:px-16" aria-label={chapter.eyebrow}>
   <div className="pointer-events-auto mx-auto w-full max-w-7xl">
    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#f1d4ac]">{chapter.eyebrow} · Sunday Houses</p>
