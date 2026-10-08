@@ -10,7 +10,7 @@ export default function StaysPage() {
   return <main className="bg-[#f8f7f1]">
     <ThreePageHero eyebrow="The Sunday Houses collection" title="Find your place" accent="in the hills." description="Two individual mountain homes in Nokdara, Kalimpong, near Gumbadhara Monastery. Explore the collection and find your kind of quiet." />
     <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-32 md:grid-cols-2 lg:px-10">
-      {stays.map((stay,i)=><Link href={`/stays/${stay.slug}`} key={stay.slug} className={`group block ${i===1?"md:mt-24":""}`}>
+      {stays.map((stay)=><Link href={`/stays/${stay.slug}`} key={stay.slug} className="group block">
         <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
           <PropertyImage slug={stay.slug as "whistling-house" | "chaaya-glades"} className="object-cover transition-transform duration-1000 group-hover:scale-110"/>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"/>
