@@ -9,13 +9,13 @@ const properties = {
     name: "Whistling House",
     eyebrow: "A quiet mountain hideaway",
     description: "Take your time in the hills. Whistling House is part of the Sunday Houses collection in Nokdara, Kalimpong, close to Gumbadhara Monastery.",
-    image: "/images/hero.webp",
+    image: "/images/properties/whistling-house/exterior.png",
   },
   "chaaya-glades": {
     name: "Chaaya Glades",
     eyebrow: "A gentle retreat into nature",
     description: "Find a quieter rhythm at Chaaya Glades, a Sunday Houses mountain homestay in Nokdara, Kalimpong, near Gumbadhara Monastery.",
-    image: "/images/our-story.jpg",
+    image: "/images/properties/chaaya-glades/Vibrant Mountain Homestay Courtyard.png",
   },
 } as const;
 type Slug = keyof typeof properties;
@@ -36,6 +36,7 @@ export default function PropertyPage({params}: {params:{slug:string}}) {
         <p className="mt-5 text-base leading-8 text-muted-foreground">Ask our team about availability, room options, local experiences and planning your visit.</p>
         <Link href="/contact" className="mt-8 inline-block rounded-full bg-primary px-8 py-3 text-sm text-white">Enquire about {stay.name} →</Link></div>
     </section>
+    <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-10"><div className="grid gap-4 md:grid-cols-2"><div className="relative aspect-[4/3] overflow-hidden rounded-3xl"><PropertyImage slug={params.slug as "whistling-house"|"chaaya-glades"} className="object-cover"/></div><div className="relative aspect-[4/3] overflow-hidden rounded-3xl"><Image src={params.slug==="whistling-house"?"/images/properties/whistling-house/Colourful Tibetan Buddhist Shrine Room.png":"/images/properties/chaaya-glades/Vibrant Mountain Homestay Courtyard.png"} alt={params.slug==="whistling-house"?"Traditional Buddhist prayer room at Whistling House":"Chaaya Glades homestay courtyard"} fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover"/></div></div></section>
     <section className="bg-[#e9ece4] px-6 py-20 text-center"><h2 className="font-heading text-4xl text-primary">Explore more with Sunday Houses.</h2>
       <div className="mt-7 flex flex-wrap justify-center gap-4"><Link href="/stays" className="rounded-full border border-primary/30 px-6 py-3 text-sm text-primary">All homestays</Link>
         <Link href="/nokdara" className="rounded-full border border-primary/30 px-6 py-3 text-sm text-primary">Discover Nokdara</Link></div></section>

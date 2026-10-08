@@ -1,34 +1,19 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
-import { MountainScene } from "@/components/sections/mountain-story";
-
-type Props = {
- eyebrow: string;
- title: string;
- accent: string;
- description: string;
- height?: string;
-};
-export default function ThreePageHero({ eyebrow, title, accent, description, height = "min-h-[82svh]" }: Props) {
- const ref = useRef<HTMLElement>(null);
- const progress = useRef(0);
- const reduce = useReducedMotion();
- const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
- const smooth = useSpring(scrollYProgress, { stiffness: 75, damping: 25 });
- useEffect(() => smooth.on("change", v => { progress.current = reduce ? 0 : Math.min(1,v*0.8); }), [smooth, reduce]);
- const textY = useTransform(smooth, [0,1], ["0%", "-22%"]);
- const textOpacity = useTransform(smooth,[0,0.65,1],[1,1,0]);
- return <section ref={ref} className={`relative isolate flex items-end overflow-hidden bg-[#102c36] px-6 pb-16 pt-28 text-[#f5eee5] md:px-12 md:pb-24 ${height}`}>
-  <MountainScene progress={progress}/>
-  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#071920]/95 via-[#071920]/45 to-[#071920]/10"/>
-  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#071920]/45 via-transparent to-transparent"/>
-  <motion.div style={{y:textY,opacity:textOpacity}} className="relative mx-auto w-full max-w-7xl">
-   <p className="mb-7 text-[11px] font-semibold uppercase tracking-[0.36em] text-[#e5c4a0]">{eyebrow}</p>
-   <h1 className="max-w-6xl font-heading text-[clamp(3.4rem,8vw,8.5rem)] leading-[0.95] tracking-[-0.055em]">{title}<br/><span className="font-serif font-normal italic text-[#f0d1a7]">{accent}</span></h1>
-   <p className="mt-8 max-w-xl text-base leading-8 text-white/85 md:text-lg">{description}</p>
-  </motion.div>
-  <div className="pointer-events-none absolute bottom-5 right-6 text-[10px] uppercase tracking-[0.2em] text-white/60">3D mountain journey · Scroll ↓</div>
+import Image from "@/components/shared/safe-photo";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+type Props={eyebrow:string;title:string;accent:string;description:string;height?:string};
+export default function ThreePageHero({eyebrow,title,accent,description,height="min-h-[65svh]"}:Props){
+ const key=(title+" "+eyebrow).toLowerCase();
+ const photo=key.includes("chaaya")?"/images/properties/chaaya-glades/Vibrant Mountain Homestay Courtyard.png":key.includes("whistling")?"/images/properties/whistling-house/exterior.png":key.includes("nokdara")?"/images/luxury/natural-view.webp":"/images/properties/whistling-house/exterior.png";
+ return <section className={`relative isolate flex items-end overflow-hidden bg-[#243d30] px-5 pb-14 pt-28 text-white sm:px-10 sm:pb-20 lg:px-16 ${height}`}>
+  <Image src={photo} fallback={key.includes("chaaya")?"/images/our-story.jpg":"/images/hero.webp"} alt={title+" — Sunday Houses in Nokdara"} fill priority sizes="100vw" className="object-cover"/>
+  <div className="absolute inset-0 bg-gradient-to-r from-[#122a21]/85 via-[#122a21]/45 to-[#122a21]/15"/>
+  <div className="absolute inset-0 bg-gradient-to-t from-[#122a21]/60 via-transparent to-transparent"/>
+  <div className="relative mx-auto w-full max-w-[1400px]">
+   <p className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-[#f5dcb0]">{eyebrow}</p>
+   <h1 className="max-w-5xl font-serif text-[clamp(3.1rem,8vw,8rem)] font-normal leading-[0.96] tracking-[-0.055em]">{title}<br/><em className="text-[#f5dcb0]">{accent}</em></h1>
+   <p className="mt-6 max-w-xl text-base leading-8 text-white/90 sm:text-lg">{description}</p>
+   <Link href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#f4e6c9] px-6 py-3 text-sm font-semibold text-[#1b382e]">Plan your stay <ArrowUpRight size={17}/></Link>
+  </div>
  </section>;
 }

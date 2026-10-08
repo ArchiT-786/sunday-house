@@ -3,8 +3,8 @@ import Image from "next/image";
 import { useState } from "react";
 
 const assets = {
- "whistling-house": { src: "/images/properties/whistling-house/exterior.webp", fallback: "/images/hero.webp", alt: "Whistling House exterior in Nokdara" },
- "chaaya-glades": { src: "/images/properties/chaaya-glades/prayer-room.webp", fallback: "/images/our-story.jpg", alt: "Prayer room interior at Chaaya Glades" },
+ "whistling-house": { src: "/images/properties/whistling-house/exterior.png", fallback: "/images/hero.webp", alt: "Whistling House exterior in Nokdara" },
+ "chaaya-glades": { src: "/images/properties/chaaya-glades/Vibrant Mountain Homestay Courtyard.png", fallback: "/images/our-story.jpg", alt: "Courtyard and mountain homestay at Chaaya Glades" },
 } as const;
 
 export type PropertySlug = keyof typeof assets;
