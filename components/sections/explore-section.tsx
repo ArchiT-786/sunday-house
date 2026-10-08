@@ -16,7 +16,7 @@ export default function ExploreSection() {
               <span className="h-px w-8 bg-accent/60" />
 
               <span className="text-[9px] font-medium uppercase tracking-[0.28em] text-accent">
-                Explore Rishop
+                Explore Nokdara
               </span>
             </div>
           </div>
@@ -42,8 +42,8 @@ export default function ExploreSection() {
 
             <div className="relative aspect-[1.2] overflow-hidden bg-muted sm:aspect-[1.45]">
               <Image
-                src="/images/rishop-surroundings.jpeg"
-                alt="Mountain landscape surrounding Rishop"
+                src="/images/nokdara-surroundings.jpeg"
+                alt="Mountain landscape surrounding Nokdara"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 65vw"
@@ -64,7 +64,7 @@ export default function ExploreSection() {
                 <span className="h-px w-6 bg-white/60" />
 
                 <span className="text-[8px] font-medium uppercase tracking-[0.25em] text-white/80">
-                  Rishop · West Bengal
+                  Nokdara · West Bengal
                 </span>
               </div>
 
@@ -78,7 +78,7 @@ export default function ExploreSection() {
           {/* Story */}
           <div className="lg:pb-2">
             <p className="max-w-md text-[15px] leading-7 tracking-[-0.01em] text-primary/80">
-              Sunday House sits quietly in Rishop — a small hill
+              Sunday Houses sits quietly in Nokdara — a small hill
               village surrounded by pine forests, mountain trails,
               and wide-open views of the eastern Himalayas.
             </p>
@@ -110,7 +110,7 @@ export default function ExploreSection() {
 
             {/* CTA */}
             <Link
-              href="/rishop"
+              href="/nokdara"
               className="
                 group
                 mt-7
