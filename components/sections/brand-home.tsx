@@ -16,10 +16,10 @@ function Reveal({children,className=""}:{children:React.ReactNode;className?:str
   transition={{duration:0.95,ease:[0.22,1,0.36,1]}} className={className}>{children}</motion.div>;
 }
 export default function BrandHome(){
- return <main className="overflow-x-clip bg-[#eee9df]">
+ return <main className="bg-[#eee9df]">
   <MountainStory/>
-  <section className="relative bg-[#eee9df] px-6 py-32 text-[#172f32] md:py-48 lg:px-12">
-   <div className="mx-auto grid max-w-7xl items-start gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+  <section className="relative bg-[#eee9df] px-6 py-20 text-[#172f32] sm:py-24 md:py-32 lg:px-12">
+   <div className="mx-auto grid max-w-7xl items-start gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
     <Reveal><div className="flex items-center gap-4"><span className="h-px w-12 bg-[#a87850]"/><p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#a87850]">The Sunday Houses philosophy</p></div>
       <p className="mt-12 max-w-sm text-lg leading-9 text-[#506365]">Curated escapes where the landscape sets the rhythm and every stay feels personal.</p>
       <div className="mt-14 flex h-32 w-32 items-center justify-center rounded-full border border-[#a87850]/50"><Compass className="h-10 w-10 text-[#a87850]"/></div>
@@ -30,7 +30,7 @@ export default function BrandHome(){
     </Reveal>
    </div>
   </section>
-  <section className="bg-[#122a2f] px-6 py-32 text-[#f4eee4] md:py-40 lg:px-12" id="homestays">
+  <section className="bg-[#122a2f] px-6 py-20 text-[#f4eee4] sm:py-24 md:py-32 lg:px-12" id="homestays">
    <div className="mx-auto max-w-7xl">
     <Reveal className="mb-20 flex flex-col justify-between gap-10 md:flex-row md:items-end">
      <div><p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#caa579]">The collection · Nokdara</p>
@@ -38,10 +38,10 @@ export default function BrandHome(){
      <div className="max-w-sm"><p className="text-base leading-8 text-[#d5d9d4]/75">Two individual mountain homes, near Gumbadhara Monastery in the Kalimpong hills.</p>
       <Link href="/stays" className="mt-6 inline-flex items-center gap-3 text-sm font-medium text-[#e4c7a2]">Discover the full collection <ArrowUpRight className="h-4 w-4"/></Link></div>
     </Reveal>
-    <div className="grid gap-16 md:grid-cols-2 md:gap-8">
-     {properties.map((item,i)=><Reveal key={item.slug} className={i===1?"md:mt-36":""}>
+    <div className="grid gap-12 md:grid-cols-2 md:gap-8">
+     {properties.map((item,i)=><Reveal key={item.slug} className={i===1?"md:mt-20":""}>
       <Link href={`/stays/${item.slug}`} className="group block">
-       <div className="relative aspect-[3/4] overflow-hidden bg-[#2c4547]">
+       <div className="relative aspect-[4/5] overflow-hidden bg-[#2c4547] sm:aspect-[3/4]">
         <PropertyImage slug={item.slug as "whistling-house" | "chaaya-glades"} className="object-cover transition-transform duration-[1800ms] ease-out group-hover:scale-110"/>
         <div className="absolute inset-0 bg-gradient-to-t from-[#061c23]/65 via-transparent to-transparent"/>
         <span className="absolute left-7 top-7 text-xs uppercase tracking-[0.3em] text-white">{item.number} / Sunday Houses</span>
@@ -65,7 +65,7 @@ export default function BrandHome(){
     </Reveal>
    </div>
   </section>
-  <section className="bg-[#eee9df] px-6 py-36 text-center text-[#172f32] md:py-48">
+  <section className="bg-[#eee9df] px-6 py-20 text-center text-[#172f32] sm:py-24 md:py-32">
    <Reveal className="mx-auto max-w-5xl"><p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#a87850]">An invitation to slow down</p>
     <h2 className="mt-8 font-heading text-[clamp(3.4rem,8vw,8rem)] leading-[1.02] tracking-[-0.06em]">The next chapter<br/><span className="font-serif font-normal italic text-[#9d704e]">is yours.</span></h2>
     <p className="mx-auto mt-8 max-w-lg text-lg leading-8 text-[#506365]">Let's find the mountain home that feels right for you.</p>
