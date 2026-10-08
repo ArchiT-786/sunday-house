@@ -16,7 +16,7 @@ function Reveal({children,className=""}:{children:React.ReactNode;className?:str
   transition={{duration:0.95,ease:[0.22,1,0.36,1]}} className={className}>{children}</motion.div>;
 }
 export default function BrandHome(){
- return <main className="overflow-hidden bg-[#eee9df]">
+ return <main className="overflow-x-clip bg-[#eee9df]">
   <MountainStory/>
   <section className="relative bg-[#eee9df] px-6 py-32 text-[#172f32] md:py-48 lg:px-12">
    <div className="mx-auto grid max-w-7xl items-start gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
