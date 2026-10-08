@@ -1,5 +1,5 @@
-export type SiteAccessSettings = { maintenance: boolean; restricted: boolean; allowedIps: string[] };
-export const DEFAULT_SETTINGS: SiteAccessSettings = { maintenance: false, restricted: false, allowedIps: [] };
+export type SiteAccessSettings = { maintenance: boolean; restricted: boolean; allowedIps: string[]; launchAt: string | null; showCountdown: boolean };
+export const DEFAULT_SETTINGS: SiteAccessSettings = { maintenance: false, restricted: false, allowedIps: [], launchAt: null, showCountdown: false };
 export const SETTINGS_PATH = "site-access.json";
 export function normalizeIp(input: string) {
  const ip = input.trim().replace(/^::ffff:/, "");
@@ -11,7 +11,7 @@ export function normalizeIp(input: string) {
 export function sanitizeSettings(value: unknown): SiteAccessSettings {
  if(!value || typeof value!=="object") return DEFAULT_SETTINGS;
  const v=value as Record<string,unknown>;
- return { maintenance:v.maintenance===true, restricted:v.restricted===true, allowedIps:Array.isArray(v.allowedIps)?Array.from(new Set(v.allowedIps.filter((x):x is string=>typeof x==="string").map(normalizeIp).filter(Boolean))).slice(0,100):[] };
+ return { maintenance:v.maintenance===true, restricted:v.restricted===true, allowedIps:Array.isArray(v.allowedIps)?Array.from(new Set(v.allowedIps.filter((x):x is string=>typeof x==="string").map(normalizeIp).filter(Boolean))).slice(0,100):[], launchAt:typeof v.launchAt==="string" && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(v.launchAt) && Number.isFinite(Date.parse(v.launchAt)) ? v.launchAt : null, showCountdown:v.showCountdown===true };
 }
 export function githubHeaders(){return {Accept:"application/vnd.github+json",Authorization:`Bearer ${process.env.SITE_ACCESS_GITHUB_TOKEN||""}`,"X-GitHub-Api-Version":"2022-11-28"};}
 export function settingsUrl(){return `https://api.github.com/repos/${process.env.SITE_ACCESS_REPOSITORY||"ArchiT-786/sunday-house"}/contents/${SETTINGS_PATH}`;}
