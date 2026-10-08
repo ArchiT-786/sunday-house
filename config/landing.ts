@@ -11,8 +11,8 @@ export const features: FeatureLdg[] = [
   {
     title: "Wake Up to the Hills",
     description:
-      "Enjoy the peaceful atmosphere of Rishop, surrounded by forests, fresh mountain air, and beautiful Himalayan landscapes.",
-    link: "/rishop",
+      "Enjoy the peaceful atmosphere of Nokdara, surrounded by forests, fresh mountain air, and beautiful Himalayan landscapes.",
+    link: "/nokdara",
     icon: "search",
   },
   {
@@ -30,10 +30,10 @@ export const features: FeatureLdg[] = [
     icon: "home",
   },
   {
-    title: "Explore Rishop",
+    title: "Explore Nokdara",
     description:
       "Discover forests, viewpoints, nearby villages, monasteries, and the quieter side of the Eastern Himalayas.",
-    link: "/rishop",
+    link: "/nokdara",
     icon: "search",
   },
   {
@@ -58,7 +58,7 @@ export const testimonials: TestimonialType[] = [
     job: "Guest",
     image: "/images/guest-2.jpg",
     review:
-      "Rishop was beautiful, and staying at Sunday House made the trip feel relaxed and comfortable.",
+      "Nokdara was beautiful, and staying at Sunday Houses made the trip feel relaxed and comfortable.",
   },
   {
     name: "Priya",
