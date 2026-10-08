@@ -1,2 +1,2 @@
-import Link from "next/link";
-export default function MaintenancePage(){return <main className="flex min-h-screen items-center justify-center bg-[#f6f3eb] px-6 py-20 text-[#24362c]"><div className="max-w-2xl text-center"><p className="text-xs font-semibold uppercase tracking-[.3em] text-[#9b7856]">Sunday Houses · Nokdara</p><h1 className="mt-8 font-serif text-[clamp(3.5rem,9vw,7rem)] leading-[.98]">A little pause.<br/><em>Something beautiful is coming.</em></h1><p className="mx-auto mt-8 max-w-lg text-lg leading-8 text-[#536257]">Our mountain home is getting a little care. Please visit us again soon.</p><Link href="mailto:hello@sundayhouses.com" className="mt-10 inline-flex rounded-full border border-[#24362c] px-7 py-3 text-sm font-semibold">Get in touch</Link></div></main>}
+import { redirect } from "next/navigation";
+export default function LegacyMaintenancePage(){redirect("/coming-soon");}
