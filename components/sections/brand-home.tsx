@@ -1,76 +1,46 @@
 "use client";
-import PropertyImage from "@/components/shared/property-image";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, Compass, MoveUpRight } from "lucide-react";
-import MountainStory from "./mountain-story";
+import { ArrowUpRight, ArrowDownRight, MapPin, Sparkles } from "lucide-react";
+import PropertyImage from "@/components/shared/property-image";
 
-const properties = [
-  { name: "Whistling House", slug: "whistling-house", image: "/images/hero.webp", label: "An intimate mountain escape", number: "01" },
-  { name: "Chaaya Glades", slug: "chaaya-glades", image: "/images/our-story.jpg", label: "A sanctuary for slower days", number: "02" },
-];
+const stays=[
+ {name:"Whistling House",slug:"whistling-house",note:"A home for unhurried mornings",index:"01"},
+ {name:"Chaaya Glades",slug:"chaaya-glades",note:"A sanctuary for slower days",index:"02"},
+] as const;
 function Reveal({children,className=""}:{children:React.ReactNode;className?:string}){
  const reduce=useReducedMotion();
- return <motion.div initial={reduce?false:{opacity:0,y:64}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.12}}
-  transition={{duration:0.95,ease:[0.22,1,0.36,1]}} className={className}>{children}</motion.div>;
+ return <motion.div initial={reduce?false:{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.12}} transition={{duration:0.65,ease:"easeOut"}} className={className}>{children}</motion.div>;
 }
 export default function BrandHome(){
- return <main className="overflow-hidden bg-[#eee9df]">
-  <MountainStory/>
-  <section className="relative bg-[#eee9df] px-6 py-32 text-[#172f32] md:py-48 lg:px-12">
-   <div className="mx-auto grid max-w-7xl items-start gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
-    <Reveal><div className="flex items-center gap-4"><span className="h-px w-12 bg-[#a87850]"/><p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#a87850]">The Sunday Houses philosophy</p></div>
-      <p className="mt-12 max-w-sm text-lg leading-9 text-[#506365]">Curated escapes where the landscape sets the rhythm and every stay feels personal.</p>
-      <div className="mt-14 flex h-32 w-32 items-center justify-center rounded-full border border-[#a87850]/50"><Compass className="h-10 w-10 text-[#a87850]"/></div>
-    </Reveal>
-    <Reveal><h2 className="font-heading text-[clamp(3.4rem,7vw,7.7rem)] leading-[1.02] tracking-[-0.06em]">We believe<br/>in <span className="font-serif font-normal italic text-[#9d704e]">getting lost</span><br/>in the moment.</h2>
-      <p className="mt-10 max-w-xl text-lg leading-9 text-[#506365]">Not another hotel chain. A thoughtful collection of mountain homes, each with its own story, sense of place, and warm welcome. Our journey begins in Nokdara, Kalimpong.</p>
-      <Link href="/our-story" className="group mt-10 inline-flex items-center gap-3 border-b border-[#172f32] pb-2 text-sm font-semibold uppercase tracking-[0.13em]">The story behind Sunday Houses <MoveUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"/></Link>
-    </Reveal>
-   </div>
-  </section>
-  <section className="bg-[#122a2f] px-6 py-32 text-[#f4eee4] md:py-40 lg:px-12" id="homestays">
-   <div className="mx-auto max-w-7xl">
-    <Reveal className="mb-20 flex flex-col justify-between gap-10 md:flex-row md:items-end">
-     <div><p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#caa579]">The collection · Nokdara</p>
-      <h2 className="mt-7 font-heading text-[clamp(3.7rem,7.5vw,8rem)] leading-[0.98] tracking-[-0.055em]">Find your<br/><span className="font-serif font-normal italic text-[#d6b58d]">kind of quiet.</span></h2></div>
-     <div className="max-w-sm"><p className="text-base leading-8 text-[#d5d9d4]/75">Two individual mountain homes, near Gumbadhara Monastery in the Kalimpong hills.</p>
-      <Link href="/stays" className="mt-6 inline-flex items-center gap-3 text-sm font-medium text-[#e4c7a2]">Discover the full collection <ArrowUpRight className="h-4 w-4"/></Link></div>
-    </Reveal>
-    <div className="grid gap-16 md:grid-cols-2 md:gap-8">
-     {properties.map((item,i)=><Reveal key={item.slug} className={i===1?"md:mt-36":""}>
-      <Link href={`/stays/${item.slug}`} className="group block">
-       <div className="relative aspect-[3/4] overflow-hidden bg-[#2c4547]">
-        <PropertyImage slug={item.slug as "whistling-house" | "chaaya-glades"} className="object-cover transition-transform duration-[1800ms] ease-out group-hover:scale-110"/>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#061c23]/65 via-transparent to-transparent"/>
-        <span className="absolute left-7 top-7 text-xs uppercase tracking-[0.3em] text-white">{item.number} / Sunday Houses</span>
-        <div className="absolute bottom-8 left-8 right-8"><p className="text-xs uppercase tracking-[0.22em] text-white/80">{item.label}</p>
-         <h3 className="mt-3 font-heading text-[clamp(2.5rem,4vw,4.8rem)] leading-tight text-white">{item.name}</h3></div>
-       </div>
-       <div className="mt-6 flex items-center justify-between border-b border-white/20 pb-5 text-sm uppercase tracking-[0.12em] text-[#e9e5da]"><span>Explore the property</span><ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"/></div>
-      </Link>
-     </Reveal>)}
+ return <main className="overflow-x-clip bg-[#f6f3eb] text-[#24362c]">
+  <section className="relative isolate min-h-[min(840px,92svh)] overflow-hidden bg-[#253d30] text-white sm:min-h-[92svh]">
+   <Image src="/images/properties/whistling-house/exterior.webp" alt="Whistling House garden and mountain homestay in Nokdara" fill priority sizes="100vw" className="object-cover" />
+   <div className="absolute inset-0 bg-gradient-to-r from-[#0e261f]/85 via-[#112a24]/40 to-[#112a24]/10"/>
+   <div className="absolute inset-0 bg-gradient-to-t from-[#0e261f]/65 via-transparent to-transparent"/>
+   <div className="relative mx-auto flex min-h-[min(840px,92svh)] max-w-[1600px] flex-col justify-between px-5 pb-10 pt-24 sm:min-h-[92svh] sm:px-10 sm:pt-32 lg:px-16">
+    <div className="max-w-[900px]">
+     <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#f3e6cb]">Sunday Houses <span className="mx-2">/</span> Nokdara, Kalimpong</p>
+     <h1 className="mt-8 max-w-[900px] font-serif text-[clamp(3.4rem,9vw,9.6rem)] font-normal leading-[0.91] tracking-[-0.055em]">Some places <em className="text-[#f6dca9]">stay</em> with you.</h1>
+     <p className="mt-7 max-w-md text-base leading-7 text-white/90 sm:text-lg sm:leading-8">A collection of intimate mountain homes. Rooted in the hills, made for the moments that matter.</p>
+     <div className="mt-8 flex flex-wrap gap-3"><Link href="/stays" className="inline-flex min-h-12 items-center gap-3 rounded-full bg-[#f4e6c9] px-6 py-3 text-sm font-semibold text-[#1b382e] transition-colors hover:bg-white">Explore our stays <ArrowUpRight size={17}/></Link><Link href="/contact" className="inline-flex min-h-12 items-center gap-3 rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/15">Plan your escape <ArrowUpRight size={17}/></Link></div>
     </div>
+    <div className="flex flex-wrap items-end justify-between gap-5 border-t border-white/35 pt-5 text-[11px] uppercase tracking-[0.2em] text-white/85"><span>27° North · A slower way to travel</span><span className="flex items-center gap-2">Scroll to discover <ArrowDownRight size={17}/></span></div>
    </div>
   </section>
-  <section className="relative isolate min-h-[85vh] overflow-hidden bg-[#213a3b] text-white">
-   <Image src="/images/luxury/natural-view.webp" fill sizes="100vw" alt="Eastern Himalayan landscape" className="object-cover"/>
-   <div className="absolute inset-0 bg-gradient-to-r from-[#081e23]/90 via-[#081e23]/55 to-[#081e23]/15"/>
-   <div className="relative mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-center px-6 py-28 lg:px-12">
-    <Reveal><p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#e6c39c]">The destination · Nokdara</p>
-     <h2 className="mt-8 max-w-5xl font-heading text-[clamp(3.6rem,8vw,8rem)] leading-[0.99] tracking-[-0.055em]">The beauty of<br/><span className="font-serif font-normal italic text-[#f0d5b2]">nowhere to be.</span></h2>
-     <p className="mt-8 max-w-lg text-lg leading-9 text-white/80">Quiet village trails. Misty mornings. The simple luxury of time. Discover a different side of the Kalimpong hills.</p>
-     <Link href="/nokdara" className="mt-9 w-fit rounded-full border border-white/60 px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white hover:text-[#122a2f]">Explore Nokdara ↗</Link>
-    </Reveal>
+  <section className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 py-20 sm:px-10 sm:py-28 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:px-16">
+   <Reveal><p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#937148]">The Sunday Houses feeling</p><div className="mt-8 flex h-14 w-14 items-center justify-center rounded-full border border-[#a8a38b]"><Sparkles size={23}/></div><p className="mt-7 max-w-sm text-base leading-8 text-[#536257]">Fresh mountain air. The warmth of a familiar home. A little more time to be yourself.</p></Reveal>
+   <Reveal><h2 className="font-serif text-[clamp(3rem,6.5vw,7rem)] leading-[1.03] tracking-[-0.05em]">Come for the views. <em className="text-[#9b7856]">Stay for the feeling.</em></h2><Link href="/our-story" className="mt-8 inline-flex items-center gap-2 border-b border-[#24362c] pb-2 text-sm font-semibold">Our story <ArrowUpRight size={17}/></Link></Reveal>
+  </section>
+  <section className="bg-[#e9e8dd] px-5 py-20 sm:px-10 sm:py-28 lg:px-16" id="homestays">
+   <div className="mx-auto max-w-[1400px]">
+    <Reveal className="mb-10 flex flex-wrap items-end justify-between gap-6 sm:mb-14"><div><p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#937148]">Stay a little longer</p><h2 className="mt-4 font-serif text-[clamp(3.2rem,7vw,7.4rem)] leading-[0.95] tracking-[-0.05em]">Our <em>homes.</em></h2></div><Link href="/stays" className="inline-flex items-center gap-2 border-b border-[#24362c] pb-2 text-sm font-semibold">View all homestays <ArrowUpRight size={17}/></Link></Reveal>
+    <div className="grid gap-8 md:grid-cols-2 lg:gap-10">{stays.map((stay,i)=><Reveal key={stay.slug} className={i===1?"md:pt-20":""}><Link href={`/stays/${stay.slug}`} className="group block"><div className="relative aspect-[5/6] overflow-hidden rounded-t-[9rem] bg-[#9b9c86] sm:aspect-[4/5]"><PropertyImage slug={stay.slug} className="object-cover transition-transform duration-700 group-hover:scale-105"/><div className="absolute inset-0 bg-gradient-to-t from-[#172d24]/55 via-transparent to-transparent"/><span className="absolute bottom-6 left-6 text-xs font-medium uppercase tracking-[0.22em] text-white">{stay.index} / Sunday Houses</span></div><div className="flex items-center justify-between gap-4 border-b border-[#24362c]/25 py-5"><div><h3 className="font-serif text-[clamp(2rem,3vw,3.4rem)] leading-tight">{stay.name}</h3><p className="mt-1 text-sm text-[#657166]">{stay.note}</p></div><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#24362c]/40 transition-colors group-hover:bg-[#24362c] group-hover:text-white"><ArrowUpRight size={21}/></span></div></Link></Reveal>)}</div>
    </div>
   </section>
-  <section className="bg-[#eee9df] px-6 py-36 text-center text-[#172f32] md:py-48">
-   <Reveal className="mx-auto max-w-5xl"><p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#a87850]">An invitation to slow down</p>
-    <h2 className="mt-8 font-heading text-[clamp(3.4rem,8vw,8rem)] leading-[1.02] tracking-[-0.06em]">The next chapter<br/><span className="font-serif font-normal italic text-[#9d704e]">is yours.</span></h2>
-    <p className="mx-auto mt-8 max-w-lg text-lg leading-8 text-[#506365]">Let's find the mountain home that feels right for you.</p>
-    <Link href="/contact" className="mt-10 inline-block rounded-full bg-[#172f32] px-9 py-4 text-sm font-medium text-[#f4eee4] transition-transform hover:-translate-y-1">Plan your stay ↗</Link>
-   </Reveal>
-  </section>
+  <section className="relative isolate min-h-[70svh] overflow-hidden bg-[#24362c] text-white"><Image src="/images/luxury/natural-view.webp" alt="Misty hills of the eastern Himalayas" fill sizes="100vw" className="object-cover"/><div className="absolute inset-0 bg-[#12291e]/55"/><div className="relative mx-auto flex min-h-[70svh] max-w-[1400px] flex-col justify-center px-5 py-24 sm:px-10 lg:px-16"><Reveal><p className="flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-[#f5dcb0]"><MapPin size={16}/> The destination · Nokdara</p><h2 className="mt-7 max-w-4xl font-serif text-[clamp(3.2rem,7.5vw,8rem)] leading-[0.98] tracking-[-0.055em]">Far from the noise. <em className="text-[#f6dca9]">Close to everything that matters.</em></h2><p className="mt-6 max-w-lg text-base leading-8 text-white/90">Discover the quieter side of Kalimpong, one winding trail and mountain morning at a time.</p><Link href="/nokdara" className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-[#f4e6c9] px-7 py-3.5 text-sm font-semibold text-[#1b382e]">Discover Nokdara <ArrowUpRight size={17}/></Link></Reveal></div></section>
+  <section className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 py-20 sm:px-10 sm:py-28 lg:grid-cols-2 lg:gap-24 lg:px-16"><Reveal><div className="relative aspect-[5/4] overflow-hidden rounded-[1.5rem] sm:rounded-[2.5rem]"><Image src="/images/properties/chaaya-glades/prayer-room.webp" alt="Traditional Himalayan prayer room at Chaaya Glades" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover"/></div></Reveal><Reveal><p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#937148]">Beyond the ordinary</p><h2 className="mt-5 font-serif text-[clamp(3rem,5vw,5.8rem)] leading-[1.02] tracking-[-0.045em]">A little closer to <em>the heart of the hills.</em></h2><p className="mt-6 max-w-lg text-base leading-8 text-[#536257]">Every home has a story. Explore the people, culture and everyday details that make Nokdara so memorable.</p><Link href="/our-story" className="mt-7 inline-flex items-center gap-2 border-b border-[#24362c] pb-2 text-sm font-semibold">Meet Sunday Houses <ArrowUpRight size={17}/></Link></Reveal></section>
+  <section className="bg-[#263e32] px-5 py-20 text-center text-white sm:px-10 sm:py-28"><Reveal className="mx-auto max-w-4xl"><p className="text-xs uppercase tracking-[0.24em] text-[#f5dcb0]">Your home in the hills</p><h2 className="mt-5 font-serif text-[clamp(3.4rem,8vw,8rem)] leading-[0.95] tracking-[-0.05em]">Your next chapter <em className="text-[#f6dca9]">starts here.</em></h2><p className="mx-auto mt-7 max-w-lg text-base leading-8 text-white/80">A quiet weekend or a longer escape — we'll help you find your mountain home.</p><Link href="/contact" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#f4e6c9] px-8 py-4 text-sm font-semibold text-[#1b382e]">Enquire about a stay <ArrowUpRight size={17}/></Link></Reveal></section>
  </main>;
 }
