@@ -1,3 +1,4 @@
+import PropertyImage from "@/components/shared/property-image";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -27,7 +28,7 @@ export default function PropertyPage({params}: {params:{slug:string}}) {
   if (!stay) notFound();
   return <main className="bg-[#f8f7f1]">
     <section className="relative flex min-h-[75vh] items-end overflow-hidden bg-primary px-6 pb-20 text-white md:px-12">
-      <Image src={stay.image} fill priority sizes="100vw" alt={`Mountain imagery for ${stay.name}`} className="object-cover"/>
+      <PropertyImage slug={params.slug as "whistling-house" | "chaaya-glades"} priority sizes="100vw" className="object-cover"/>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
       <div className="relative mx-auto w-full max-w-7xl"><p className="text-xs uppercase tracking-[0.3em] text-amber-200">Sunday Houses · Nokdara</p>
         <h1 className="mt-5 font-heading text-[clamp(3.5rem,9vw,8rem)] leading-none">{stay.name}</h1>
