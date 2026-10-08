@@ -3,7 +3,7 @@
   "restricted": true,
   "allowedIps": [
     "106.219.75.202",
-    "172.225.219.21"
+    "106.219.248.176"
   ],
   "launchAt": null,
   "showCountdown": false
