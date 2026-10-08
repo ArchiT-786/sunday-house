@@ -4,9 +4,8 @@ import { env } from "@/env.mjs";
 const site_url = env.NEXT_PUBLIC_APP_URL;
 
 export const siteConfig: SiteConfig = {
-  name: "Sunday House",
-  description:
-    "",
+  name: "Sunday Houses",
+  description: "Sunday Houses curates welcoming mountain homestays and thoughtful tourist services. Discover Whistling House and Chaaya Glades in Nokdara, Kalimpong.",
   url: site_url,
   ogImage: `${site_url}/_static/og.jpg`,
   links: {
@@ -18,24 +17,17 @@ export const siteConfig: SiteConfig = {
 
 export const footerLinks: SidebarNavItem[] = [
   {
-    title: "Stay",
+    title: "Discover",
     items: [
-      { title: "Stay with us", href: "/stay" },
-      
-    ],
-  },
-  {
-    title: "Rishop",
-    items: [
-      { title: "Your Place", href: "/rishop" },
-      
-    ],
-  },
-  {
-    title: "Our Story",
-    items: [
+      { title: "Our Homestays", href: "/stays" },
       { title: "Our Story", href: "/our-story" },
-      { title: "Contact Us", href: "/contact" },
+    ],
+  },
+  {
+    title: "Get in touch",
+    items: [
+      { title: "Plan your stay", href: "/contact" },
+      { title: "Email us", href: "mailto:email.sundayhouse@gmail.com" },
     ],
   },
 ];
