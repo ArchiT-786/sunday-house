@@ -40,16 +40,6 @@ const nextConfig = {
   },
   */
 
-  // New Redirect: Redirect from root (/) to /coming-soon
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/coming-soon",
-        permanent: false,
-      },
-    ];
-  },
 };
 
 module.exports = withContentlayer(nextConfig);
